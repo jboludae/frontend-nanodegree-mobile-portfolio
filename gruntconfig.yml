@@ -1,18 +1,18 @@
 
 srcDir: src/
-destDir: prod/
+destDir:
 cssSrcDir: src/css/
-cssDestDir: prod/css/
+cssDestDir: css/
 jsSrcDir: src/js/
-jsDestDir: prod/js/
+jsDestDir: js/
 imgSrcDir: src/img/
-imgDestDir: prod/img/
+imgDestDir: img/
 
 viewsSrcDir: src/views/
-viewsDestDir: prod/views/
+viewsDestDir: views/
 viewsCssSrcDir: src/views/css/
-viewsCssDestDir: prod/views/css/
+viewsCssDestDir: views/css/
 viewsJsSrcDir: src/views/js/
-viewsJsDestDir: prod/views/js/
+viewsJsDestDir: views/js/
 viewsImgSrcDir: src/views/images/
-viewsImgDestDir: prod/views/images/
+viewsImgDestDir: views/images/
