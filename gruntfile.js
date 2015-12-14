@@ -64,10 +64,10 @@ module.exports = function(grunt) {
           minifyURLs: true
         },
         files : {
-          [config.destDir + 'index.html']: [config.srcDir + 'index.html'],
-          [config.destDir + 'project-2048.html']: [config.srcDir + 'project-2048.html'],
-          [config.destDir + 'project-webperf.html']: [config.srcDir + 'project-webperf.html'],
-          [config.destDir + 'project-mobile.html']: [config.srcDir + 'project-mobile.html'],
+          ['index.html']: [config.srcDir + 'index.html'],
+          ['project-2048.html']: [config.srcDir + 'project-2048.html'],
+          ['project-webperf.html']: [config.srcDir + 'project-webperf.html'],
+          ['project-mobile.html']: [config.srcDir + 'project-mobile.html'],
           [config.viewsDestDir + 'pizza.html']: [config.viewsSrcDir + 'pizza.html']
         }
       }
