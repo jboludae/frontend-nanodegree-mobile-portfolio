@@ -24,6 +24,10 @@ module.exports = function(grunt) {
             name: "small",
             width: 100,
             height: 75
+          },{
+            name: "medium",
+            width: 360,
+            height: 270
           }]
         },
         files: [{
@@ -52,7 +56,7 @@ module.exports = function(grunt) {
     // We specify here which files we clean so they do not grow indefinitely
     clean: [
     config.jsDestDir + 'perfmatters.js',
-    config.viewsJsDestDir+'main.js'
+    config.viewsJsDestDir + 'main.js'
     ],
     htmlmin : {
       build : {
@@ -76,6 +80,14 @@ module.exports = function(grunt) {
       myTask:{
         src: [config.imgSrcDir, config.viewsImgSrcDir, config.imgDestDir, config.viewsImgDestDir]
       }
+    },
+    copy:{
+      main:{
+        files:[
+          {expand: true, flatten: true, src: 'src/views/css/*', dest: 'views/css/'},
+          {expand: true, flatten: true, src: 'src/views/images/pizza.png', dest: 'views/images/'},
+        ],
+      },
     }
   });
 
@@ -88,6 +100,6 @@ module.exports = function(grunt) {
 
   grunt.registerTask('default', ['responsive_images','imageoptim']);
   // The following line will work when you run "grunt build" in console
-  grunt.registerTask('build', ['clean','uglify:build','htmlmin:build']);
+  grunt.registerTask('build', ['clean','uglify:build','htmlmin:build','copy']);
 
 };

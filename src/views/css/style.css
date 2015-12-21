@@ -33,6 +33,9 @@ form {
   position: fixed;
   width: 256px;
   z-index: -1;
+  /*We put each of the small pizzas in its own layer*/
+  transform: translateZ(0);
+  will-change: transform;
 }
 
 .randomPizzaContainer {
