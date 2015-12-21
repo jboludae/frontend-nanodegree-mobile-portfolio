@@ -423,8 +423,10 @@ var resizePizzas = function(size) {
   }
 
   changeSliderLabel(size);
+  // We store the querySelector result in a variable so it does not have to
+  // be computed repeatedly
   var allPizzas = document.querySelectorAll(".randomPizzaContainer")
-
+  // We now use a for loop to specify
   for (var i = 0; i < allPizzas.length; i++) {
       allPizzas[i].style.width = newWidth;
   }
@@ -513,7 +515,7 @@ var items = document.getElementsByClassName('mover'); // We use getElementsByCla
 function updatePositions() {
   frame++;
   window.performance.mark("mark_start_frame");
-  // var items = document.getElementsByClassName('mover'); // We use getElementsByClassName cause it may be more efficienct than querySelectorAll
+  // We compute scrollValue outside of the loop.
   var scrollValue = document.body.scrollTop / 1250;
   var itemsLength = items.length // We store items.length in a variable so we don't have to look it up each time
   for (var i = 0; i < itemsLength; i++) {
@@ -538,13 +540,10 @@ window.addEventListener('scroll', updatePositions);
 // Generates the sliding pizzas when the page loads.
 document.addEventListener('DOMContentLoaded', function() {
   var s = 256;
+  // We compute here the number of necessary pizzas. We certainly do not need 200.
   var cols = Math.floor(window.innerWidth / s) + 1;
   var rows = Math.floor(window.innerHeight / s) + 1;
-  console.log(cols);
-  console.log(rows);
   var numPizzas = cols*rows
-  console.log(numPizzas)
-  // We do not need to generate 200 pizzas. With 32, it is more than enough (at least on my laptop).
   for (var i = 0; i < numPizzas; i++) {
     var elem = document.createElement('img');
     elem.className = 'mover';
